@@ -170,8 +170,8 @@ ansible-playbook -l webservers web.yaml
       name: "{{ item }}"
       state: latest
     loop:
-      - oraclelinux-developer-release-el9
-      - python39-oci-cli
+      - oraclelinux-developer-release-el8
+      - python36-oci-cli
       - stress-ng
       - telnet
       - git
