@@ -1,4 +1,4 @@
-# Ansible 
+# Ansible Demo
 
 ## Installation
 
@@ -302,7 +302,7 @@ ansible-galaxy collection install oracle.oci --upgrade
 [Oracle Cloud Infrastructure Ansible Collection](https://galaxy.ansible.com/oracle/oci)
 
 
-### Ansible OCI Module in Action
+## Ansible OCI Module in Action
 Notice the value of hosts parameter
 
 ```yaml
@@ -332,6 +332,8 @@ Notice the value of hosts parameter
 ```bash
     ansible-playbook -i localhost oci_bucket.yaml
 ```
+
+[Oracle Cloud Infrastructure Ansible Collection](https://oci-ansible-collection.readthedocs.io/en/latest/)
 
 ## Best Practice
 Break the ansible code by functionality into smaller files, and reference those using a single file
