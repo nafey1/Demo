@@ -108,7 +108,8 @@ ansible all -m shell -a "cat /etc/redhat-release" -u opc -vv # or use -v or -vvv
 
 
 # Running ansible command against a target not defined in inventory
-ansible all -i 150.230.31.141, -m shell -a hostname -u opc
+ansible all -i  132.145.96.36,  -m shell -a uptime -u opc
+ansible all -i "132.145.96.36," -m shell -a uptime -u opc
 ```
 
 ## Getting help on a Module
@@ -154,6 +155,9 @@ ansible-doc -s yum
 
 ```bash
 ansible-playbook -l webservers web.yaml
+
+# Run a playbook against a host, not defined in inventory
+ansible-playbook -i 132.145.96.36, web.yaml
 ```
 
 ### Ansible Loops
