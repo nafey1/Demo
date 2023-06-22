@@ -308,18 +308,22 @@ Notice the value of hosts parameter
 ```yaml
 ---
 - hosts: localhost
+  gather_facts: false
   collections:
     - oracle.oci
-
+  vars:
+    bucket_name: ansible_bucket
+    tenancy_namespace: orasenatdpltintegration03
+    compartment_ocid: ocid1.compartment.oc1..aaaaaaaaebfcvucovsujhajrikjge63w333hirsdsop7yrr6uehti24kecpa
   tasks:
     - block:
 
       - name: Create bucket
         oci_object_storage_bucket:
           # required
-          compartment_id: "ocid1.compartment.oc1..aaaaaaaaebfcvucovsujhajrikjge63w33ixrsdsop7ya"
-          namespace_name: orasenatdpltintegration03
-          name: ansible_bucket
+          compartment_id: "{{ compartment_ocid }}"
+          namespace_name: "{{ tenancy_namespace }}"
+          name: "{{ bucket_name }}"
           # optional
           storage_tier: Standard
           metadata: null
