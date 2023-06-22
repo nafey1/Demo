@@ -74,7 +74,7 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping  # Error again
 
 ansible all -m ping -u opc
 
-# Formated Output
+# Condensed Output
 ansible all -m ping -u opc -o
 
 # Control the Ansible Fork
